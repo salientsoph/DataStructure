@@ -19,6 +19,7 @@ class SinglyLinkedList:
         while v != None:
             yield v
             v = v.next
+            return StopIterator
 
     def __str__(self):
         return "->".join(str(v) for v in self)
@@ -78,18 +79,11 @@ class SinglyLinkedList:
     def search(self, key):
         v = self.head
         while v != None:
-            if v.key = key:
+            if v.key == key:
                 return v
             v = v.next
         return None
 
-    #generator
-    def __iter__(self):
-        v = self.head
-        while v != None:
-            yield v
-            v = v.next
-        return StopIterator
 
     #삭제
     def remove(self, key):
@@ -106,4 +100,3 @@ class SinglyLinkedList:
                 del v
                 self.size -= 1
                 return key
-            
